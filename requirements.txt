@@ -1,0 +1,10 @@
+# requirements.txt
+# List of Python packages required for the Bayesian Adaptive Clinical Trial project
+
+numpy
+pandas
+pymc
+arviz
+matplotlib
+seaborn
+tqdm

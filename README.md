@@ -67,3 +67,49 @@ At predefined interim analysis points (e.g., after each stage of patient enrollm
 ## 5. Project Structure
 
 The project is organized into modular components for clarity and reusability:
+.
+├── README.md
+├── requirements.txt
+├── data/
+│   └── (empty: simulated data is generated runtime)
+├── notebooks/
+│   └── Bayesian_Adaptive_Trial_Analysis.ipynb
+├── src/
+│   └── trial_simulator.py      # Contains ClinicalTrialSimulator class
+│   └── glm_model.py            # Contains BayesianGLM class
+└── results/
+├── plots/                  # Stores generated plots (e.g., posterior, trace plots)
+└── tables/                 # Stores generated summary tables
+
+
+## 6. Data Simulation
+
+The project simulates clinical trial data to ensure reproducibility and to avoid issues with proprietary real-world data. The simulation parameters are configurable within the `Bayesian_Adaptive_Trial_Analysis.ipynb` notebook and `trial_simulator.py`. This allows for exploration of various true drug effects, patient demographics, and noise levels. The simulated data mimics the structure and variability expected in a Phase II chronic pain trial.
+
+## 7. Results and Discussion
+
+The `Bayesian_Adaptive_Trial_Analysis.ipynb` notebook will demonstrate:
+
+* The progression of a single simulated adaptive trial, showing data accumulation and interim analysis results.
+* Visualizations of the posterior distributions for each parameter, providing insights into treatment effects, covariate impacts, and model uncertainty.
+* Charts illustrating how the probability of efficacy evolves over trial stages, leading to adaptive stopping decisions.
+* (If multi-simulation is enabled) The operating characteristics of the adaptive design, such as the distribution of final sample sizes, probabilities of correct decisions (e.g., correctly identifying an efficacious drug), and average trial duration across many simulations.
+
+The analysis will highlight the advantages of the Bayesian adaptive approach in terms of flexibility and real-time evidence generation for decision-making.
+
+## 8. Future Work & Improvements
+
+* Implement more complex adaptive rules (e.g., response-adaptive randomization, seamless Phase II/III designs).
+* Explore different likelihood functions (e.g., Poisson for count data, Bernoulli for binary outcomes).
+* Incorporate utility functions to optimize trial decisions based on cost, efficacy, and safety.
+* Develop a more sophisticated patient simulator, potentially using real-world data distributions.
+* Integrate `PyMC-Bambi` for simplified GLM syntax.
+
+## 9. Contact
+
+Feel free to reach out if you have any questions or feedback!
+
+**Rittwika Kansabanik**
+* LinkedIn: https://www.linkedin.com/in/rittwika-kansabanik/
+* Email: rittwikak95@gmail.com
+

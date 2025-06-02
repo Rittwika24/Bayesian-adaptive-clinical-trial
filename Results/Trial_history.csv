@@ -1,0 +1,5 @@
+,stage,patients_enrolled,prob_drug1_vs_placebo,prob_drug2_vs_placebo,decision
+0,1,60,0.28025,0.871125,Continue
+1,2,120,0.718375,0.873,Continue
+2,3,180,0.554375,0.863125,Continue
+3,4,240,0.75,0.850875,Completed Max Stages: No clear decision (requires further investigation or larger trial).

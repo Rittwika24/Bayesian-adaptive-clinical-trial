@@ -49,7 +49,8 @@ The core statistical model is a Bayesian GLM, implemented in the `BayesianGLM` c
 $$Y_k \sim \text{Normal}(\mu_k, \sigma^2)$$
 
 Where the linear predictor $\mu_k$ is defined as:
-$$\mu_k = \text{intercept} + \beta_{\text{group}}[\text{group}_k] + \beta_{\text{baseline\_pain}} \cdot \text{baseline\_pain}_k + \beta_{\text{age}} \cdot \text{age}_k + \beta_{\text{sex}} \cdot \text{sex\_encoded}_k + \beta_{\text{biomarker}} \cdot \text{biomarker}_k$$
+
+$$\mu_k = \text{intercept} + \beta_{\text{group}}\text{group}_k + \beta_{\text{baseline\_pain}} \cdot \text{baseline\_pain}_k + \beta_{\text{age}} \cdot \text{age}_k + \beta_{\text{sex}} \cdot \text{sex\_encoded}_k + \beta_{\text{biomarker}} \cdot \text{biomarker}_k$$
 
 * **Priors:** Weakly informative Normal priors are placed on all regression coefficients (intercept, group effects, covariate effects). A Half-Normal prior is used for the standard deviation ($\sigma$).
 * **Inference:** Markov Chain Monte Carlo (MCMC) sampling, specifically the No-U-Turn Sampler (NUTS) implemented in `PyMC`, is used to draw samples from the posterior distributions of all model parameters.
